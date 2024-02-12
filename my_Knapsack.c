@@ -13,31 +13,22 @@ int main(){
     int selected_bool[items] = {0};
 
     for (int i = 0; i < items; i++) {
-        printf("Enter name %d: ", i + 1); //enter names
         scanf("%20s", names[i]); // Limited to 20 chars
-
-        printf("Enter value of %d: ", i + 1); //enter names
         scanf("%d", &values[i]);
-
-        printf("Enter weight of %d: ", i + 1); //enter names
         scanf("%d", &weights[i]); 
     }
     int maxValue = knapSack(weights, values, selected_bool);
     
 
-    printf("\nMaximum profit: %d", maxValue);
-    printf("\nSelected items:");
+    printf("Maximum profit: %d", maxValue);
+    printf("Selected items:");
     int first = 1;
     for (int i = 0; i < items; i++) {
         if (selected_bool[i] == 1) {
-            // if (!first) {
-            //     printf(", ");
-            // }
             printf(" %s", names[i]);
             first = 0;
         }
     }
-    printf("\n");
     
 
     return 0;
